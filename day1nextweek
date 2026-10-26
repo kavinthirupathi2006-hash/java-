@@ -1,0 +1,78 @@
+import java.util.Scanner;
+class Main {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ int n = sc.nextInt();
+ int square = n * n;
+ int sum = 0;
+ while (square > 0) {
+ int digit = square % 10;
+ sum = sum + digit;
+ square = square / 10;
+ }
+ if (sum == n) {
+ System.out.println("Neon Number");
+ } else {
+ System.out.println("Not a Neon Number");
+ }
+ sc.close();
+ }
+}
+import java.util.Scanner;
+class Main {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ int n = sc.nextInt();
+ int temp = n;
+ int sum = 0;
+ while (temp > 0) {
+ int digit = temp % 10;
+ sum = sum + digit * digit * digit;
+ temp = temp / 10;
+ }
+ if (sum == n) {
+ System.out.println("Armstrong Number");
+ } else {
+ System.out.println("Not Armstrong Number");
+ }
+ sc.close();
+ }
+}
+import java.util.Scanner;
+class Main {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ int n = sc.nextInt();
+ int sum = 0;
+ for (int i = 1; i < n; i++) {
+ if (n % i == 0) {
+ sum = sum + i;
+ }
+ }
+ if (n > 1 && sum == n) {
+ System.out.println("Perfect Number");
+ } else {
+ System.out.println("Not a Perfect Number");
+ }
+ sc.close();
+ }
+}
+import java.util.Scanner;
+class Main {
+ public static void main(String[] args) {
+ Scanner sc = new Scanner(System.in);
+ int n = sc.nextInt();
+ int count = 0;
+ for (int i = 1; i <= n; i++) {
+ if (n % i == 0) {
+ count++;
+ }
+ }
+ if (count == 2) {
+ System.out.println("Prime Number");
+ } else {
+ System.out.println("Not a Prime Number");
+ }
+ sc.close();
+ }
+}
