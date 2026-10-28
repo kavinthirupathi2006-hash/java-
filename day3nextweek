@@ -1,0 +1,127 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        int a[] = {40, 10, 30, 20};
+
+        for (int i = 0; i < a.length - 1; i++) {
+            for (int j = 0; j < a.length - 1 - i; j++) {
+                if (a[j] > a[j + 1]) {
+                    int temp = a[j];
+                    a[j] = a[j + 1];
+                    a[j + 1] = temp;
+                }
+            }
+        }
+
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+}
+import java.util.Scanner;
+
+public class Main {
+
+    static void sort(int a[], int left, int right) {
+        if (left < right) {
+            int mid = (left + right) / 2;
+
+            sort(a, left, mid);
+            sort(a, mid + 1, right);
+
+            merge(a, left, mid, right);
+        }
+    }
+
+    static void merge(int a[], int left, int mid, int right) {
+        int temp[] = new int[right - left + 1];
+
+        int i = left;
+        int j = mid + 1;
+        int k = 0;
+
+        while (i <= mid && j <= right) {
+            if (a[i] <= a[j]) {
+                temp[k++] = a[i++];
+            } else {
+                temp[k++] = a[j++];
+            }
+        }
+
+        while (i <= mid) {
+            temp[k++] = a[i++];
+        }
+
+        while (j <= right) {
+            temp[k++] = a[j++];
+        }
+
+        for (i = left, k = 0; i <= right; i++, k++) {
+            a[i] = temp[k];
+        }
+    }
+
+    public static void main(String[] args) {
+        int a[] = {40, 10, 30, 20};
+
+        sort(a, 0, a.length - 1);
+
+        System.out.println("Sorted array:");
+
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        int a[] = {10, 20, 30, 40, 50};
+
+        int first = a[0];
+
+        for (int i = 0; i < a.length - 1; i++) {
+            a[i] = a[i + 1];
+        }
+
+        a[a.length - 1] = first;
+
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        int a[] = {10, 20, 30, 40, 50};
+
+        int last = a[a.length - 1];
+
+        for (int i = a.length - 1; i > 0; i--) {
+            a[i] = a[i - 1];
+        }
+
+        a[0] = last;
+
+        for (int i = 0; i < a.length; i++) {
+            System.out.print(a[i] + " ");
+        }
+    }
+}
+public class Main {
+    public static void main(String[] args) {
+        int a[] = {1, 2, 4, 5, 6};
+        int n = 6;
+
+        int total = n * (n + 1) / 2;
+        int sum = 0;
+
+        for (int i = 0; i < a.length; i++) {
+            sum = sum + a[i];
+        }
+
+        int missing = total - sum;
+
+        System.out.println("Missing Number = " + missing);
+    }
+}
