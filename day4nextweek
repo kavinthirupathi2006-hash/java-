@@ -1,0 +1,169 @@
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println ("Enter a sentence:");
+        String s = sc.nextLine();
+        
+        StringBuilder sb = new StringBuilder(s);
+        
+        for (int i = 0; i< sb.length(); i++) {
+            if (sb.charAt(i) ==' ') {
+                sb.deleteCharAt(i);
+                i--;
+            }
+        }
+        
+        System.out.println(sb);
+        sc.close();
+    }
+}
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println ("Enter  a word:");
+        String s = sc.nextLine();
+        
+        StringBuilder sb = new StringBuilder(s);
+        
+        if (sb.length() >= 3) {
+            sb.deleteCharAt(sb.length() - 1);
+            sb.deleteCharAt(0);
+            System.out.println(sb);
+        } else {
+            System.out.println("Enter at least 3 characters");
+        }
+            
+        sc.close();
+    }
+}
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println ("Enter  a word:");
+        String s = sc.nextLine();
+        
+        StringBuilder sb = new StringBuilder(s);
+        
+        if (sb.length() >= 3) {
+            StringBuilder last = new StringBuilder(
+                sb.substring(sb.length() - 3)
+            );
+            System.out.println(last);
+        } else {
+            System.out.println("Enter at least 3 characters");
+        }
+        
+        sc.close();
+    }
+}
+import java.util.Scanner;
+
+public class RemoveVowels {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println ("Enter  a sentence:");
+        String s = sc.nextLine();
+        
+        StringBuilder sb = new StringBuilder();
+        
+        for (int i = 0; i < s.length(); i++) {
+          char ch = s.charAt(i);
+            
+            if ("aeiouAEIOU".indexOf(ch) == -1) {
+                sb.append(ch);
+            }
+        }
+
+        System.out.println("Output: "+ sb);
+        
+        
+        sc.close();
+    }
+}
+import java.util.Scanner;
+
+public class StudentNames {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println ("Enter the number of students:");
+        int n = sc.nextInt();
+        sc.nextLine();
+        
+        StringBuilder sb = new StringBuilder();
+
+        for (int i = 1; i <= n; i++){
+            System.out.println("Enter student name:");
+            String name = sc.nextLine();
+
+            sb.append(i).append(".").append(name).append("\n");
+        }
+
+        System.out.println("Student List:");
+        System.out.println(sb);
+        
+        sc.close();
+    }
+}
+import java.util.Scanner;
+
+public class MaskPhoneNumber {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println ("Enter phone number:");
+        StringBuffer sb = new StringBuffer(sc.nextLine());
+
+        for (int i = 0; i < sb.length() - 4 ; i++) {
+            sb.setCharAt(i,'X');
+        }
+        
+         System.out.println("Output: " + sb);
+        
+        sc.close();
+    }
+}
+import java.util.Scanner;
+
+public class AlternateStrings {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        
+        System.out.println ("Enter first string:");
+        String s1 = sc.nextLine();
+
+        System.out.println("Enter second string:");
+        String s2 = sc.nextLine();
+
+        StringBuffer sb = new StringBuffer();
+
+        int i = 0,j = 0;
+        
+        while (i < s1.length() || j < s2.length()) {
+
+            if (i < s1.length()) {
+                sb.append(s1.charAt(i));
+                i++;
+            }
+
+            if (j < s2.length()) {
+                sb.append(s2.charAt(j));
+                j++;
+            }
+        }
+
+        System.out.println("Output: " + sb);
+        
+        sc.close();
+    }
+}
